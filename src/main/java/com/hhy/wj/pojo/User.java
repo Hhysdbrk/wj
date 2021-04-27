@@ -13,9 +13,18 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)    // @GeneratedValue 用于标注主键的生成策略, IDENTITY: 采用数据库ID自增长的方式来自增主键字段。
 	@Column(name = "id")
 	int id;
-	
 	String username;
 	String password;
+	String salt;
+	
+	public String getSalt() {
+		return salt;
+	}
+	
+	public void setSalt(String salt) {
+		this.salt = salt;
+	}
+	
 	
 	public int getId() {
 		return id;
